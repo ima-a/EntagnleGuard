@@ -1,0 +1,7 @@
+{
+    "classical_accuracy": 0.9238578680203046,
+    "quantum_accuracy": 0.5583756345177665,
+    "difference": -0.36548223350253806,
+    "classical_f1": 0.9230769230769231,
+    "quantum_f1": 0.423841059602649
+}

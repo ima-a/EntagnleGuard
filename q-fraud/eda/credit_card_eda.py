@@ -39,11 +39,14 @@ import seaborn as sns
 from scipy import stats
 import warnings
 import os
+from pathlib import Path
 
 warnings.filterwarnings('ignore')
 
-# ── Output directory ────────────────────────────────────────────────────────
-OUTPUT_DIR = "./eda_outputs"
+# ── Paths ────────────────────────────────────────────────────────────────────
+BASE_DIR = Path(__file__).resolve().parent.parent
+OUTPUT_DIR = BASE_DIR / "results"
+DATA_PATH = BASE_DIR / "data" / "creditcard.csv"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # ── Plot style ───────────────────────────────────────────────────────────────
@@ -80,7 +83,7 @@ print("  CREDIT CARD FRAUD EDA  |  Loading Data…")
 print("="*65)
 
 try:
-    df = pd.read_csv("creditcard.csv")
+    df = pd.read_csv(DATA_PATH)
     print(f"✅  Dataset loaded: {df.shape[0]:,} rows  ×  {df.shape[1]} columns")
 except FileNotFoundError:
     print("⚠️  creditcard.csv not found – generating synthetic demo data…")

@@ -7,28 +7,17 @@ Execute scripts in sequence from the `q-fraud/` directory:
 ```bash
 cd q-fraud
 
-# Step 1: Feature Selection
+# Run everything at once (recommended)
+python scripts/run_pipeline.py
+
+# Or run individually:
 python scripts/feature_selection.py
-
-# Step 2: Balance Dataset
 python scripts/balance_dataset.py
-
-# Step 3: Prepare Quantum Data
 python scripts/prepare_quantum_data.py
-
-# Step 4: Train Classical Baseline
 python scripts/classical_baseline.py
-
-# Step 5: Create Quantum Feature Map
 python scripts/quantum_feature_map.py
-
-# Step 6: Train Quantum VQC
 python scripts/quantum_vqc.py
-
-# Step 7: Compare Models
 python scripts/compare_models.py
-
-# Step 8: Generate Visualizations
 python scripts/visualize_results.py
 
 # Launch Dashboard
@@ -145,11 +134,8 @@ Opens at `http://localhost:8501` with pages:
 
 ```bash
 cd q-fraud
-for script in feature_selection balance_dataset prepare_quantum_data \
-              classical_baseline quantum_feature_map quantum_vqc \
-              compare_models visualize_results; do
-    python scripts/${script}.py
-done
+python scripts/run_pipeline.py        # Skips training if models exist
+python scripts/run_pipeline.py --force  # Force retrain everything
 streamlit run dashboard.py
 ```
 

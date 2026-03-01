@@ -1,7 +1,7 @@
 # Credit Card Fraud EDA Report
 
 ## Source Script
-This report summarizes the exploratory analysis implemented in `credit_card_eda.py`.
+This report summarizes the exploratory analysis implemented in `q-fraud/eda/credit_card_eda.py`.
 
 ## Dataset Context
 - Dataset: Credit card fraud transactions (Kaggle ULB dataset expected as `creditcard.csv`)
@@ -15,7 +15,7 @@ This report summarizes the exploratory analysis implemented in `credit_card_eda.
 ## EDA Workflow Covered in the Script
 
 ### 1) Data Loading and Initial Checks
-- Tries to read `creditcard.csv`.
+- Tries to read `q-fraud/data/creditcard.csv`.
 - If missing, creates synthetic demo data so the EDA pipeline can still run.
 - Prints:
   - data shape
@@ -95,4 +95,4 @@ This report summarizes the exploratory analysis implemented in `credit_card_eda.
 
 ## Output Note
 The script currently writes figures to `./eda_outputs/` by default.
-In this workspace, generated images have been organized under `datset/`.
+In this workspace, generated images are organized under `q-fraud/results/`.
